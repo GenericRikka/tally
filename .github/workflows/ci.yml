@@ -1,0 +1,99 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Cancel in-progress runs for the same branch when a new push arrives
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ── 1. Commit message linting ──────────────────────────────────────────────
+  commit-lint:
+    name: Commit Lint
+    runs-on: ubuntu-latest
+    # Only meaningful on PRs — direct pushes to main arrive via merged PRs
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Fetch all commits in this PR so every message gets checked
+          fetch-depth: 0
+
+      - uses: wagoid/commitlint-github-action@v6
+        with:
+          configFile: commitlint.config.js
+          # Check every commit in the PR, not just the latest
+          firstParent: false
+
+  # ── 2. Code style ─────────────────────────────────────────────────────────
+  style:
+    name: Style Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install clang-format
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y clang-format
+
+      - name: Check formatting
+        # --dry-run + --Werror: print diffs but exit non-zero if any file
+        # is not formatted according to .clang-format
+        run: |
+          find src include -name '*.c' -o -name '*.h' \
+            | xargs clang-format --dry-run --Werror
+
+  # ── 3. Build & test — Linux ───────────────────────────────────────────────
+  build-linux:
+    name: Build & Test (Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y cmake ninja-build gcc
+
+      - name: Configure
+        run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug
+
+      - name: Build
+        run: cmake --build build
+
+      - name: Run tests
+        run: bash tests/run_tests.sh ./build/tally
+
+  # ── 4. Build & test — Windows (MSYS2 / MinGW-w64) ────────────────────────
+  build-windows:
+    name: Build & Test (Windows)
+    runs-on: windows-latest
+    defaults:
+      run:
+        # All steps in this job run inside the MSYS2 shell
+        shell: msys2 {0}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: >-
+            mingw-w64-x86_64-gcc
+            mingw-w64-x86_64-cmake
+            mingw-w64-x86_64-ninja
+
+      - name: Configure
+        run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug
+
+      - name: Build
+        run: cmake --build build
+
+      - name: Run tests
+        run: bash tests/run_tests.sh ./build/tally.exe
