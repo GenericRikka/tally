@@ -4,6 +4,6 @@ ColumnLimit: 80
 AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLoopsOnASingleLine: false
-BreakBeforeBraces: Allman
+BreakBeforeBraces: Attach
 SpaceBeforeParens: ControlStatements
 IndentCaseLabels: true
