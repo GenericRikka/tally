@@ -11,4 +11,4 @@
  */
 long tally_count_lines(FILE *fp);
 
-#endif 
+#endif

@@ -1,7 +1,6 @@
 #include "tally.h"
 
-long tally_count_lines(FILE *fp)
-{
+long tally_count_lines(FILE *fp) {
     if (!fp)
         return -1;
 

@@ -3,8 +3,7 @@
 
 #include "tally.h"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     if (argc != 2) {
         fprintf(stderr, "Usage: tally <file>\n");
         return EXIT_FAILURE;
