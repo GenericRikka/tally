@@ -1,6 +1,8 @@
 # tally
-
-[![CI](https://github.com/GenericRikka/tally/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/tally/actions/workflows/ci.yml)
+[![CI](https://github.com/GenericRikka/tally/actions/workflows/ci.yml/badge.svg)](https://github.com/GenericRikka/tally/actions/workflows/ci.yml)
+[![Latest Release](https://img.shields.io/github/v/release/GenericRikka/tally)](https://github.com/GenericRikka/tally/releases/latest)
+[![License](https://img.shields.io/github/license/GenericRikka/tally)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-linux%20%7C%20windows%20%7C%20freebsd-blue)](https://github.com/GenericRikka/tally/releases/latest)
 
 `tally` is a minimal command-line tool that counts lines in a file.
 
