@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1f2e"/>
+      <stop offset="100%" stop-color="#0f1318"/>
+    </linearGradient>
+    <linearGradient id="pageGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8edf5"/>
+      <stop offset="100%" stop-color="#c8d0de"/>
+    </linearGradient>
+    <linearGradient id="lensGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4a9eff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#1a6ecc" stop-opacity="0.15"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="lensShadow">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <clipPath id="pageClip">
+      <polygon points="22,12 78,12 90,24 90,108 22,108"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="128" height="128" rx="22" fill="url(#bg)"/>
+
+  <!-- Page shadow -->
+  <polygon points="23,13 79,13 91,25 91,109 23,109"
+           fill="#000" fill-opacity="0.3" transform="translate(2,3)"/>
+
+  <!-- Page body -->
+  <polygon points="22,12 78,12 90,24 90,108 22,108"
+           fill="url(#pageGrad)" filter="url(#shadow)"/>
+
+  <!-- Folded corner -->
+  <polygon points="78,12 78,24 90,24" fill="#a0abbe"/>
+  <line x1="78" y1="12" x2="90" y2="24" stroke="#8898b0" stroke-width="0.5"/>
+
+  <!-- Text lines on page -->
+  <g clip-path="url(#pageClip)" stroke="#8898b0" stroke-linecap="round">
+    <line x1="31" y1="36" x2="68" y2="36" stroke-width="2.5" stroke="#b0bccf"/>
+    <line x1="31" y1="46" x2="74" y2="46" stroke-width="2" stroke="#c0ccdc"/>
+    <line x1="31" y1="54" x2="60" y2="54" stroke-width="2" stroke="#c0ccdc"/>
+    <line x1="31" y1="62" x2="70" y2="62" stroke-width="2" stroke="#c0ccdc"/>
+    <line x1="31" y1="70" x2="55" y2="70" stroke-width="2" stroke="#c0ccdc"/>
+    <line x1="31" y1="78" x2="65" y2="78" stroke-width="2" stroke="#c0ccdc"/>
+    <line x1="31" y1="86" x2="72" y2="86" stroke-width="2" stroke="#c0ccdc"/>
+  </g>
+
+  <!-- Magnifying glass circle -->
+  <circle cx="75" cy="75" r="24"
+          fill="url(#lensGrad)"
+          stroke="#4a9eff" stroke-width="3.5"
+          filter="url(#lensShadow)"/>
+
+  <!-- Lens shine -->
+  <circle cx="75" cy="75" r="24"
+          fill="none"
+          stroke="#ffffff" stroke-width="1"
+          stroke-opacity="0.15"/>
+  <ellipse cx="68" cy="68" rx="7" ry="4.5"
+           fill="white" fill-opacity="0.12"
+           transform="rotate(-35 68 68)"/>
+
+  <!-- Counter digits inside lens: "42" -->
+  <text x="75" y="80"
+        font-family="'Courier New', Courier, monospace"
+        font-size="16" font-weight="700"
+        fill="#4a9eff"
+        text-anchor="middle"
+        letter-spacing="-0.5"
+        filter="url(#shadow)">42</text>
+
+  <!-- Magnifying glass handle -->
+  <line x1="93" y1="93" x2="108" y2="108"
+        stroke="#4a9eff" stroke-width="5"
+        stroke-linecap="round"/>
+  <line x1="93" y1="93" x2="108" y2="108"
+        stroke="#ffffff" stroke-width="1.5"
+        stroke-linecap="round" stroke-opacity="0.2"/>
+</svg>

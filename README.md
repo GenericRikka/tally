@@ -4,6 +4,8 @@
 [![License](https://img.shields.io/github/license/GenericRikka/tally)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-linux%20%7C%20windows%20%7C%20freebsd-blue)](https://github.com/GenericRikka/tally/releases/latest)
 
+![tally logo](tally.svg)
+
 `tally` is a minimal command-line tool that counts lines in a file.
 
 ```
