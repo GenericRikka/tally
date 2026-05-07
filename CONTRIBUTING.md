@@ -75,7 +75,7 @@ sudo apt install clang-format
 3. Add the original repository as a remote named `upstream` so you can pull
    in future changes:
    ```bash
-   git remote add upstream https://github.com/MAINTAINER_USERNAME/tally.git
+   git remote add upstream https://github.com/GenericRikka/tally.git
    ```
 
 4. Verify you have both remotes:
@@ -83,8 +83,8 @@ sudo apt install clang-format
    git remote -v
    # origin    https://github.com/YOUR_USERNAME/tally.git (fetch)
    # origin    https://github.com/YOUR_USERNAME/tally.git (push)
-   # upstream  https://github.com/MAINTAINER_USERNAME/tally.git (fetch)
-   # upstream  https://github.com/MAINTAINER_USERNAME/tally.git (push)
+   # upstream  https://github.com/GenericRikka/tally.git (fetch)
+   # upstream  https://github.com/GenericRikka/tally.git (push)
    ```
 
 ---
