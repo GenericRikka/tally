@@ -28,12 +28,12 @@ understanding them upfront will save you a lot of back-and-forth.
 The contribution workflow looks like this:
 
 ```
-upstream (this repo)
-    │
-    └─► your fork on GitHub
-            │
-            └─► a branch on your fork
-                    │
+upstream (this repo) ◀———————————————————————————┐
+    │                                            │
+    └─► your fork on GitHub                      │
+            │                                    │
+            └─► a branch on your fork            │
+                    │                            │
                     └─► Pull Request → review → merge
 ```
 
