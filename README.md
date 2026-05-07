@@ -37,7 +37,7 @@ the people contributing to it and for anyone reading the source.
    ```
 3. Clone and build:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/tally.git
+   git clone https://github.com/GenericRikka/tally.git
    cd tally
    cmake -B build -G Ninja
    cmake --build build
@@ -47,7 +47,7 @@ the people contributing to it and for anyone reading the source.
 ### Linux / BSD
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/tally.git
+git clone https://github.com/GenericRikka/tally.git
 cd tally
 cmake -B build -G Ninja
 cmake --build build
