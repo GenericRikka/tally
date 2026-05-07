@@ -136,7 +136,7 @@ jobs:
       - name: Publish GitHub release
         uses: softprops/action-gh-release@v2
         with:
-          body_path: RELEASE_NOTES.md
+          body_path: .github/RELEASE_NOTES.md
           files: |
             tally-*-linux-x86_64
             tally-*-windows-x86_64.exe
