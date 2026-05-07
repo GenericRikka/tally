@@ -1,6 +1,6 @@
 # tally
 
-[![CI](https://github.com/YOUR_USERNAME/tally/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/tally/actions/workflows/ci.yml)
+[![CI](https://github.com/GenericRikka/tally/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/tally/actions/workflows/ci.yml)
 
 `tally` is a minimal command-line tool that counts lines in a file.
 
