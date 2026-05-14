@@ -1,6 +1,7 @@
 #ifndef TALLY_H
 #define TALLY_H
 
+#include <ctype.h>
 #include <stdio.h>
 
 /**

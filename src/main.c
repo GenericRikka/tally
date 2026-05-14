@@ -5,15 +5,28 @@
 #include "tally.h"
 
 int main(int argc, char *argv[]) {
+    const char *Usage = "Usage: tally <file> = count lines\nUsage: tally -w "
+                        "<files> = count words\n";
+
     if (argc < 2 || argc > 3) {
-        fprintf(stderr, "Usage: tally <file>\n");
+        fprintf(stderr, "%s", Usage);
         return EXIT_FAILURE;
     }
-
     char *filename;
     if (argc == 3) {
+
+        if (strcmp(argv[1], "-w") != 0) {
+            fprintf(stderr, "%s", Usage);
+            return EXIT_FAILURE;
+        }
+
         filename = argv[2];
     } else {
+
+        if (argc == 2 && strcmp(argv[1], "-w") == 0) {
+            fprintf(stderr, "%s", Usage);
+            return EXIT_FAILURE;
+        }
         filename = argv[1];
     }
 
