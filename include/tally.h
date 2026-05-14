@@ -11,4 +11,5 @@
  */
 long tally_count_lines(FILE *fp);
 
+long tally_count_words(FILE *fp);
 #endif
