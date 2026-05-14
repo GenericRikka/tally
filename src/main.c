@@ -11,20 +11,20 @@ int main(int argc, char *argv[]) {
     }
 
     char *filename;
-    if (argc == 3){
-        *filename = argv[2];
-    }else{
-    *filename = argv[1];
+    if (argc == 3) {
+        filename = argv[2];
+    } else {
+        filename = argv[1];
     }
 
-    FILE *fp = fopen(argv[2], "r");
+    FILE *fp = fopen(filename, "r");
     if (!fp) {
-        perror(argv[2]);
+        perror(filename);
         return EXIT_FAILURE;
     }
     if (strcmp(argv[1], "-w") == 0) {
-          long words = tally_count_words(fp);
-          fclose(fp);
+        long words = tally_count_words(fp);
+        fclose(fp);
 
         if (words < 0) {
             fprintf(stderr, "tally: internal error while counting\n");
@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
 
         printf("%ld\n", words);
         return EXIT_SUCCESS;
-    }else{
+    } else {
         long lines = tally_count_lines(fp);
         fclose(fp);
 
@@ -44,5 +44,5 @@ int main(int argc, char *argv[]) {
 
         printf("%ld\n", lines);
         return EXIT_SUCCESS;
-}
+    }
 }

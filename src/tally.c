@@ -24,14 +24,13 @@ long tally_count_words(FILE *fp) {
     int in_word = 0;
 
     while ((c = fgetc(fp)) != EOF) {
-        if (c == '\n'|| c == ' '|| c == '\t'){
-            in_word = 0
-        }else{
-            if(in_word == 0){
-               count++;
-               in_word = 1;
+        if (c == '\n' || c == ' ' || c == '\t') {
+            in_word = 0;
+        } else {
+            if (in_word == 0) {
+                count++;
+                in_word = 1;
             }
-
         }
     }
 
