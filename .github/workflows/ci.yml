@@ -25,9 +25,7 @@ jobs:
 
       - uses: wagoid/commitlint-github-action@v6
         with:
-          configFile: commitlint.config.js
-          # Check every commit in the PR, not just the latest
-          firstParent: false
+          configFile: commitlint.config.mjs
 
   # ── 2. Code style ─────────────────────────────────────────────────────────
   style:
