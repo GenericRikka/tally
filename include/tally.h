@@ -1,6 +1,7 @@
 #ifndef TALLY_H
 #define TALLY_H
 
+#include <ctype.h>
 #include <stdio.h>
 
 /**
@@ -11,4 +12,5 @@
  */
 long tally_count_lines(FILE *fp);
 
+long tally_count_words(FILE *fp);
 #endif
