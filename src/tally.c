@@ -36,3 +36,17 @@ long tally_count_words(FILE *fp) {
 
     return count;
 }
+
+long tally_count_characters(FILE *fp) {
+    if (!fp)
+        return -1;
+
+    long count = 0;
+    int c;
+
+    while ((c = fgetc(fp)) != EOF) {
+        count++;
+    }
+
+    return count;
+}
