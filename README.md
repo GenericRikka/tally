@@ -59,7 +59,12 @@ cmake --build build
 ## Usage
 
 ```
-tally <file>
+tally [args] <file>
+
+Args:
+Arguments are optional, if no argument is provided, lines are counted.
+   -c       Count characters
+   -w       Count words
 ```
 
 Prints the number of lines in `<file>` and exits.  
