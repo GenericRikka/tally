@@ -40,9 +40,7 @@ int main(int argc, char *argv[]) {
                 max = words;
             }
             continue;
-        }
-
-        else if (strcmp(argv[1], "-c") == 0) {
+        } else if (strcmp(argv[1], "-c") == 0) {
             long characters = tally_count_characters(fp);
             fclose(fp);
 
@@ -82,9 +80,7 @@ int main(int argc, char *argv[]) {
 
             printf("%*ld\t%s\n", width, words, argv[i]);
             continue;
-        }
-
-        else if (strcmp(argv[1], "-c") == 0) {
+        } else if (strcmp(argv[1], "-c") == 0) {
             long characters = tally_count_characters(fp);
             fclose(fp);
 
