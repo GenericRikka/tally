@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
             continue;
         }
     }
-    int width = (int)log10(max) + 1;
+    int width = (max > 0) ? (int)log10((double)max) + 1 : 1;
 
     for (int i = start; i < argc; i++) {
         FILE *fp = fopen(argv[i], "r");
