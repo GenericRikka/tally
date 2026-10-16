@@ -71,6 +71,9 @@ echo "=== tally — error handling ==="
 
 expect_fail "nonexistent file exits non-zero" "$TMPDIR_LOCAL/does_not_exist.txt"
 
+# Regression: unsupported options must not silently select line-count mode.
+expect_fail "unknown option with filename exits non-zero" -x "$TMPDIR_LOCAL/three.txt"
+
 # ── summary ───────────────────────────────────────────────────────────────────
 
 echo ""
