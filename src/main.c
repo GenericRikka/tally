@@ -43,6 +43,13 @@ int main(int argc, char *argv[]) {
             fprintf(stderr, "%s", Usage);
             return EXIT_FAILURE;
         }
+    } else if (start == 2) {
+        if (strcmp(argv[1], "-w") != 0 && strcmp(argv[1], "-c") != 0) {
+            fprintf(stderr, "%s", Usage);
+            return EXIT_FAILURE;
+        }
+    } else {
+        start = 1;
     }
 
     for (int i = start; i < argc; i++) {
